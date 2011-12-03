@@ -1,0 +1,10 @@
+case @build_tags
+when tag('mingw')
+	export { add_path :cpp_include_dir, 'SDL-1.2.13/include' }
+	add_global_path :lib_dir, 'SDL-1.2.13/lib'
+	add_global_attribute :libs, 'SDLmain', 'SDL'
+	add_global_path :dll, 'SDL-1.2.13/bin/SDL.dll'
+else
+	add_global_attribute :libs, 'SDL'
+end
+

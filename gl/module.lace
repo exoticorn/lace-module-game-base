@@ -1,0 +1,6 @@
+case @build_tags
+when tag('mingw')
+	add_global_attribute :libs, 'opengl32'
+else
+	add_global_attribute :libs, 'GL'
+end
